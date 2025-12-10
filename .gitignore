@@ -14,7 +14,7 @@ Pipfile.lock
 
 # Dữ liệu lớn và mô hình AI
 data/
-models/
+
 *.h5
 *.pkl
 *.pt
@@ -32,14 +32,7 @@ __pycache__/
 # Streamlit
 .streamlit/
 
-# Jupyter Notebooks
-.ipynb_checkpoints/
-*.ipynb
 
-# Các file khác
-*.log
-*.bak
-*.swp
 
 # Docker (nếu có)
 docker-compose.override.yml
