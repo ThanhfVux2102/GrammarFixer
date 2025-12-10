@@ -1,40 +1,12 @@
-# Python
-*.pyc
-*.pyo
-__pycache__/
-*.pyd
-
-# Thư mục môi trường ảo
-venv/
-env/
-.env/
-.venv/
-pipenv.lock
-Pipfile.lock
-
-# Dữ liệu lớn và mô hình AI
+# Bỏ qua thư mục chứa dữ liệu lớn
 data/
 
-*.h5
-*.pkl
-*.pt
-*.ckpt
-*.zip
-*.tar
-*.tar.gz
-*.json
+# Bỏ qua môi trường ảo
+venv/
 
-# Thư mục cache
+# Bỏ qua các thư mục cache
 __pycache__/
 .cache/
-*.cache
 
-# Streamlit
+# Thư mục Streamlit (nếu có)
 .streamlit/
-
-
-
-# Docker (nếu có)
-docker-compose.override.yml
-Dockerfile*
-.docker/
