@@ -6,7 +6,7 @@ from .schemas.schemas import Text,Response
 
 app = FastAPI()
 
-@app.post("/get_text/id",status_code=status.HTTP_201_CRREATED)
+@app.post("/get_text/{id}",status_code=status.HTTP_201_CRREATED)
 def create(request: Text):
     return request
 @app.get("/get_response",status_code=status.HTTP_200_OK)
