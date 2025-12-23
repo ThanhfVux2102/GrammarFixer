@@ -1,5 +1,7 @@
 from pydantic import BaseModel
 
-class test(BaseModel):
+class text(BaseModel):
     title:str
+    body:str
+class response(BaseModel):
     body:str
