@@ -1,5 +1,5 @@
 # Bỏ qua thư mục chứa dữ liệu lớn
-data/
+ml/data/
 
 # Bỏ qua môi trường ảo
 venv/
