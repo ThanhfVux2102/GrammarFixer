@@ -13,16 +13,20 @@ def create(request: Text, db:Session=Depends(get_db)):
     db.add(put)
     db.commit()
     db.refresh(put)
-    return put
-@app.get("/response",status_code=status.HTTP_200_OK,tags=["response"])
-def response1(response:Response):
-    response.body="idk"
-    return response
+    out_text=f"idk {id}"#xử lý logic ở đây 
+    resp=ResponseModel(text_id=put.id,body=out_text)
+    db.add(resp)
+    db.commit()
+    db.refresh(resp)
+    return{
+        "input":{"id":put.id,"body":put.body},
+        "output": {"id":resp.id,"body":resp.body}
+    }
 @app.get("/get_input/{id}",status_code=status.HTTP_200_OK,tags=["request"])
 def get_input(id:int,db:Session=Depends(get_db)):
     get=db.query(TextModel).filter(TextModel.id==id).first()
     return get
 @app.get("/get_response/{id}",status_code=status.HTTP_200_OK,tags=["response"])
 def response2(id:int,db:Session=Depends(get_db)):
-    get=db.query(ResponseModel).filter(TextModel.id==id).first()
+    get=db.query(ResponseModel).filter(ResponseModel.id==id).first()
     return get
